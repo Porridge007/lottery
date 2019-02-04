@@ -24,7 +24,7 @@ func TestMVC(t *testing.T){
 
 	wg.Wait()
 
-	e.GET("/").Expect().Status(httptest.StatusOK).Body().Equal("当前参与抽奖的用户数: 100\n")
+	e.GET("/").Expect().Status(httptest.StatusOK).Body().Equal("当前总共参与抽奖的用户数：100\n")
 	e.GET("/lucky").Expect().Status(httptest.StatusOK)
-	e.GET("/").Expect().Status(httptest.StatusOK).Body().Equal("当前总共参与抽奖的用户数： 99\n")
+	e.GET("/").Expect().Status(httptest.StatusOK).Body().Equal("当前总共参与抽奖的用户数：99\n")
 }
